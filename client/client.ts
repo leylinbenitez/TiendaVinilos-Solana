@@ -1,4 +1,4 @@
 // Client
-console.log("Dirección del cliente:", pg.wallet.publicKey.toString());
+console.log("My address:", pg.wallet.publicKey.toString());
 const balance = await pg.connection.getBalance(pg.wallet.publicKey);
-console.log(`Saldo disponible: ${balance / web3.LAMPORTS_PER_SOL} SOL`);
+console.log(`My balance: ${balance / web3.LAMPORTS_PER_SOL} SOL`);

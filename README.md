@@ -12,4 +12,4 @@ La idea surge de un sistema de biblioteca, pero fue transformada en una tienda d
 
 Cada acción queda registrada directamente en la blockchain, lo que ofrece una experiencia práctica en el diseño de contratos inteligentes (Smart Contracts) y en el manejo de datos descentralizados.
 
-Este proyecto forma parte de las prácticas de aprendizaje para comprender cómo se construyen aplicaciones sobre Solana y avanzar en el proceso de certificación oficial de la plataforma.
+El proyecto forma parte de las prácticas de aprendizaje para comprender cómo se construyen aplicaciones sobre Solana y avanzar en el proceso de certificación oficial de la plataforma.

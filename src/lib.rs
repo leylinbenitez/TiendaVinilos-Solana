@@ -1,7 +1,7 @@
 use anchor_lang::prelude::*;
 
 // ID del programa en Solana, se actualiza automáticamente al hacer el build/deploy
-declare_id!("");
+declare_id!("Gtq38taHxEMzNQKmz5otEjFhwdt9V7PgQWmC8UXbbmtj");
 
 
 #[program] // Macro que indica que este módulo es un programa de Solana

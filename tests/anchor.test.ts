@@ -1,40 +1,36 @@
 // No imports needed: web3, anchor, pg and more are globally available
 
-describe("Tienda de Vinilos", () => {
-  it("crear tienda", async () => {
-    // Nombre de la tienda
-    const nombreTienda = "Tienda de Vinilos";
+describe("Test", () => {
+  it("initialize", async () => {
+    // Generate keypair for the new account
+    const newAccountKp = new web3.Keypair();
 
-    // Derivar la PDA de la tienda
-    const [tiendaPda] = await web3.PublicKey.findProgramAddressSync(
-      [
-        Buffer.from("tienda_vinilos"),
-        pg.wallet.publicKey.toBuffer()
-      ],
-      pg.program.programId
-    );
-
-    // Enviar transacción
+    // Send transaction
+    const data = new BN(42);
     const txHash = await pg.program.methods
-      .crearTienda(nombreTienda)
+      .initialize(data)
       .accounts({
-        owner: pg.wallet.publicKey,
-        tienda: tiendaPda,
+        newAccount: newAccountKp.publicKey,
+        signer: pg.wallet.publicKey,
         systemProgram: web3.SystemProgram.programId,
       })
+      .signers([newAccountKp])
       .rpc();
     console.log(`Use 'solana confirm -v ${txHash}' to see the logs`);
 
-    // Confirmar transacción
+    // Confirm transaction
     await pg.connection.confirmTransaction(txHash);
 
-    // Obtener la cuenta creada
-    const tienda = await pg.program.account.tienda.fetch(tiendaPda);
+    // Fetch the created account
+    const newAccount = await pg.program.account.newAccount.fetch(
+      newAccountKp.publicKey
+    );
 
-    console.log("Datos on-chain:", tienda);
+    console.log("On-chain data is:", newAccount.data.toString());
 
-    // Verificar que el nombre se guardó correctamente
-    assert.equal(tienda.nombre, nombreTienda);
+    // Check whether the data on-chain is equal to local 'data'
+    assert(data.eq(newAccount.data));
   });
 });
+
 

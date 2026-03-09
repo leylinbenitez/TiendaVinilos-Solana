@@ -2,18 +2,6 @@
 
 Este proyecto consiste en el desarrollo de un programa en la blockchain de Solana, utilizando Rust y el framework Anchor dentro del entorno de Solana Playground.
 
-La idea surge de un sistema de biblioteca, pero fue transformada en una tienda de vinilos, donde se implementa un CRUD básico para administrar los vinilos disponibles. El programa permite:
+La propuesta, que originalmente estaba inspirada en un sistema de biblioteca, fue transformada en una tienda de vinilos en la que se implementa un CRUD básico para administrar los vinilos disponibles. Con este programa se puede crear una tienda de vinilos, registrar nuevos discos, eliminar aquellos que ya no se encuentren disponibles, consultar la colección completa y modificar el estado de disponibilidad de cada vinilo. Todas estas acciones se almacenan y ejecutan directamente en la blockchain, lo que brinda una experiencia práctica en el diseño de contratos inteligentes y en el manejo de datos descentralizados. 
 
--Crear una tienda de vinilos.
-
--Registrar nuevos discos en el catálogo.
-
--Eliminar vinilos existentes.
-
--Consultar la colección completa de vinilos.
-
--Actualizar la disponibilidad de cada disco.
-
-Cada acción queda registrada directamente en la blockchain, lo que ofrece una experiencia práctica en el diseño de contratos inteligentes (Smart Contracts) y en el manejo de datos descentralizados.
-
-El proyecto forma parte de las prácticas de aprendizaje para comprender cómo se construyen aplicaciones sobre Solana y avanzar en el proceso de certificación oficial de la plataforma.
+Este proyecto forma parte de las prácticas realizadas para comprender cómo se construyen aplicaciones sobre Solana y avanzar en el proceso de certificación oficial de la plataforma.
